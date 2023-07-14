@@ -51,7 +51,7 @@
 
                 </tbody>
             </table>
-			
+
             <!-- PAGINATION -->
             <div class="d-flex justify-content-end">
                 <pagination-controls
@@ -60,7 +60,7 @@
                 (pageChange)="onTableDataChange($event)"
               >
               </pagination-controls>
-          
+
             </div>
         </div>
     </div>
@@ -104,16 +104,16 @@
                         <div *ngIf="isFieldInvalid('empAddress')" class="text-danger">Address is required</div>
 
                     </div>
-                    
+
                 </div>
                 <div class="modal-footer">
                     <input type="button" id="cancel" class="btn btn-default" data-dismiss="modal"
                         value="Cancel">
 
-					<input type="submit" *ngIf="editButton" 
+					<input type="submit" *ngIf="editButton"
                             [disabled]="savingEmployee || !formValue.valid"
                             (click)="handleButtonClick()"
-                            class="btn btn-success" 
+                            class="btn btn-success"
                             [value]="editButton ? 'Edit' : 'Add'"
                         >
 

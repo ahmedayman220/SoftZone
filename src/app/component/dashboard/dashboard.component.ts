@@ -134,7 +134,7 @@ export class DashboardComponent implements OnInit {
     this.api.editEmployee(this.employeeData).subscribe(
       (response) => {
         document.getElementById('cancel')?.click(); // Trigger cancel button click event
-        this.successMessage('edit'); // Display success message
+        this.successMessage('Edit'); // Display success message
         this.formValue.reset(); // Reset the form
         this.getAllEmployees(); // Retrieve all employees again
       },
@@ -154,8 +154,9 @@ export class DashboardComponent implements OnInit {
   deleteEmployee(id: number) {
     this.api.deleteEmployeeById(id).subscribe(
       (res) => {
-        console.log('success');
-        this.successMessage('delete'); // Display success message for deleting employee
+        document.getElementById(`e${id}`)?.click(); // Trigger cancel button click event
+        this.successMessage('Delete'); // Display success message
+        this.getAllEmployees(); // Retrieve all employees again
       },
       (err) => {
         console.log(err);
